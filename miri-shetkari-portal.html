@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="mr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>मिरी शेतकरी बाजार</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f9f0;--card:#fff;--tx:#1f2a14;--mu:#5f6e52;--g:#2e7d32;--g2:#e4f2dc;--ac:#f59e0b;--bd:#dbe6d0;--sh:0 2px 10px #2e7d3218}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111a0d;--card:#1b2515;--tx:#ecf3e4;--mu:#a5b598;--g:#6cc070;--g2:#25341d;--bd:#32452a;--sh:none}}
+:root[data-theme="dark"]{--bg:#111a0d;--card:#1b2515;--tx:#ecf3e4;--mu:#a5b598;--g:#6cc070;--g2:#25341d;--bd:#32452a;--sh:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Noto Sans Devanagari",system-ui,sans-serif;line-height:1.55}
+.hero{background:linear-gradient(160deg,#1b5e20,#43a047 60%,#9ccc65);color:#fff;text-align:center;padding:54px 16px 70px;position:relative;overflow:hidden}
+.hero h1{margin:0;font-size:clamp(1.7rem,6vw,2.6rem)}.hero p{margin:8px auto 18px;max-width:560px;opacity:.95}
+.hero .sun{position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:#ffe082;opacity:.35}
+.hero .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+button,.btn{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:11px 18px;background:var(--g);color:#fff;font-weight:600;text-decoration:none;display:inline-block}
+.btn.w{background:#fff;color:#1b5e20}.btn.o{background:#ffffff26;color:#fff;border:1px solid #fff6}
+button.alt{background:var(--g2);color:var(--g)}
+.vrow{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:22px;position:relative}
+.vb{background:#ffffff26;border:1px solid #fff5;border-radius:20px;padding:10px 6px 6px;color:#fff;font-size:.92rem;font-weight:600;width:108px}
+.vb svg,.top svg{display:block;margin:0 auto;animation:bob 2.6s ease-in-out infinite;animation-delay:var(--d,0s);transform-origin:50% 90%}
+.vb svg{width:88px;height:88px;filter:drop-shadow(0 4px 4px #0003)}.top svg{width:74px;height:74px}
+.vb:hover svg{animation-duration:.8s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+@media (prefers-reduced-motion:reduce){.vb svg,.top svg{animation:none}}
+.top .em{display:inline-block;animation:bob 2.6s ease-in-out infinite}
+.gtabs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:18px}.gt{background:#ffffff22;border:1px solid #fff5;color:#fff;padding:7px 14px;border-radius:30px}.gt.on{background:#fff;color:#1b5e20}
+.bgart{position:absolute;inset:0;pointer-events:none;z-index:0}
+.bgart i{position:absolute;display:block;opacity:.33;animation:drift var(--t,9s) ease-in-out infinite alternate;animation-delay:var(--d,0s)}
+.bgart svg{width:100%;height:100%;display:block}
+.hero>h1,.hero>p,.hero>.btns,.hero>.gtabs,.hero>.vrow{position:relative;z-index:1}
+@keyframes drift{0%{transform:translate(0,0) rotate(-12deg) scale(1)}100%{transform:translate(28px,-38px) rotate(14deg) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.bgart i{animation:none}}
+.authbar{position:absolute;right:12px;top:12px;z-index:3;display:flex;gap:8px;align-items:center;font-size:.82rem;color:#fff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:900px;margin:-44px auto 0;padding:0 14px;position:relative}
+.st{background:var(--card);border-radius:14px;padding:12px 6px;text-align:center;box-shadow:var(--sh);border:1px solid var(--bd)}
+.st b{display:block;font-size:1.5rem;color:var(--g)}.st span{font-size:.8rem;color:var(--mu)}
+main{max-width:900px;margin:0 auto;padding:18px 14px 90px}
+h2{margin:22px 0 10px;font-size:1.2rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.chip{flex:0 0 auto;background:var(--card);color:var(--tx);border:1px solid var(--bd);padding:8px 14px;border-radius:30px;font-weight:500}
+.chip.on{background:var(--g);color:#fff;border-color:var(--g)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+input,select,textarea{font:inherit;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);width:100%}
+.bar input{flex:2 1 200px}.bar select{flex:1 1 130px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+.top{background:var(--g2);font-size:2.6rem;text-align:center;padding:14px 0 8px;position:relative}
+.top .new{position:absolute;left:10px;top:10px;font-size:.72rem;background:var(--ac);color:#222;padding:2px 9px;border-radius:20px;font-weight:700}
+.top .sold{position:absolute;right:10px;top:10px;font-size:.72rem;background:#c62828;color:#fff;padding:2px 9px;border-radius:20px}
+.body{padding:12px 14px 14px}.body h3{margin:0}.price{color:#d97706;font-weight:800;font-size:1.2rem;margin:2px 0}
+.mu{color:var(--mu);font-size:.88rem}.act{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.act a{flex:1;text-align:center;text-decoration:none;padding:9px;border-radius:10px;background:var(--g);color:#fff;font-weight:600;font-size:.88rem}
+.act a.wa{background:#25a244}.act button{padding:8px 10px;font-size:.82rem;flex:1}
+.card.gone{opacity:.6}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.how div{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;text-align:center}.how i{font-size:2rem;font-style:normal}
+.empty{grid-column:1/-1;text-align:center;color:var(--mu);padding:34px}
+dialog{border:0;border-radius:18px;padding:18px;width:min(480px,94vw);background:var(--card);color:var(--tx);max-height:92vh}
+dialog::backdrop{background:#0009}label{display:block;margin:9px 0 3px;font-size:.86rem;color:var(--mu)}.row{display:flex;gap:8px}.row>div{flex:1}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));box-shadow:0 4px 16px #0005;padding:14px 20px;border-radius:30px;background:var(--ac);color:#222;z-index:5}
+footer{text-align:center;color:var(--mu);font-size:.82rem;padding:20px 14px 90px;border-top:1px solid var(--bd)}
+</style></head><body>
+<section class="hero"><div class="sun"></div><div class="bgart" id="bgart"></div><div class="authbar" id="authbar"></div>
+<h1>🌾 मिरी शेतकरी बाजार</h1>
+<p>मिरी गाव व परिसरातील शेतकऱ्यांचा ताजा माल — थेट शेतकऱ्याकडून, योग्य भावात, मध्यस्थांशिवाय.</p>
+<div class="btns"><a class="btn w" href="#maal">🛒 माल पहा</a><button class="btn o" id="add2">➕ माल विक्रीस ठेवा</button></div><div class="gtabs" id="gtabs"></div><div class="vrow" id="vrow"></div></section>
+<div class="stats"><div class="st"><b id="s1">0</b><span>उपलब्ध माल</span></div><div class="st"><b id="s2">0</b><span>शेतकरी</span></div><div class="st"><b id="s3">0</b><span>प्रकार</span></div></div>
+<main>
+<h2 id="maal">🧺 मिरी गाव व परिसरातील उपलब्ध माल</h2>
+<div class="chips" id="chips"></div>
+<div class="bar"><input id="q" placeholder="🔍 माल किंवा शेतकरी शोधा"><select id="sort"><option value="n">नवीन आधी</option><option value="a">नावानुसार (अ-ज्ञ)</option></select></div>
+<div id="list" class="grid"></div>
+<h2>📋 कसे काम करते?</h2>
+<div class="how"><div><i>📝</i><br><b>१. माल नोंदवा</b><br><span class="mu">शेतकरी माल, दर व मोबाईल नंबर टाकतो.</span></div><div><i>🔍</i><br><b>२. ग्राहक शोधतो</b><br><span class="mu">प्रकारानुसार किंवा नावाने माल शोधा.</span></div><div><i>🤝</i><br><b>३. थेट व्यवहार</b><br><span class="mu">कॉल/WhatsApp वर बोलून भाव ठरवा.</span></div></div>
+</main>
+<footer>🌱 मिरी गाव व परिसरातील — शेतकरी व ग्राहक यांना जोडणारा उपक्रम<br>ℹ️ शेतकऱ्याने नोंदवलेला माल ॲडमिन मंजुरीनंतर सर्वांना दिसतो.<br>⚠️ खरेदीपूर्वी दर व गुणवत्ता प्रत्यक्ष तपासा. व्यवहार शेतकरी व खरेदीदार यांच्यात थेट होतो.<br><span id="note"></span></footer>
+<button class="fab" id="add">➕ माल विक्रीस ठेवा</button>
+<dialog id="ldlg"><h3 style="margin:0">👤 लॉगिन (मोबाईल OTP)</h3>
+<label>मोबाईल नंबर (१० अंकी)</label><input id="l_ph" inputmode="numeric" maxlength="10">
+<div id="l_otp" style="display:none"><label>SMS मधील ६ अंकी OTP</label><input id="l_code" inputmode="numeric" maxlength="6"></div>
+<div id="rc"></div><p class="mu" id="l_msg"></p>
+<div class="act"><button class="alt" id="l_cancel">रद्द करा</button><button id="l_go">OTP पाठवा</button></div></dialog>
+<dialog id="dlg"><h3 style="margin:0">माल विक्रीस ठेवा</h3>
+<label>शेतकऱ्याचे नाव *</label><input id="f_name">
+<label>मोबाईल नंबर (१० अंकी) *</label><input id="f_ph" inputmode="numeric" maxlength="10">
+<label>मालाचे नाव *</label><input id="f_item" placeholder="उदा. कांदा, तूर, गावरान अंडी, दूध">
+<label>प्रकार</label><select id="f_cat"></select>
+<div class="row"><div><label>उपलब्ध प्रमाण</label><input id="f_qty" placeholder="५० क्विंटल"></div><div><label>दर</label><input id="f_pr" placeholder="₹२५०० / क्विंटल"></div></div>
+<label>गाव / वाडी / वस्ती व अधिक माहिती</label><textarea id="f_d" rows="2" placeholder="उदा. मिरी, सेंद्रिय, ताजा, टेम्पो उपलब्ध"></textarea>
+<div class="act"><button class="alt" id="cancel">रद्द करा</button><button id="save">जतन करा</button></div></dialog>
+<script>
+const $=id=>document.getElementById(id);
+const CATS={"धान्य":"🌾","तेलबिया":"🌻","कडधान्य/डाळी":"🫘","भाजीपाला":"🥬","फळे":"🍇","दूध/दुग्धजन्य":"🥛","अंडी/पोल्ट्री":"🥚","शेतीपूरक":"🌿","इतर":"🧺"};
+let items=[],uid="local",canEdit=false,col=null,cat="";
+const LS="miri_listings";
+const esc=s=>{const d=document.createElement("div");d.textContent=s||"";return d.innerHTML};
+function load(){try{items=JSON.parse(localStorage.getItem(LS)||"[]")}catch(e){items=[]}}
+function persist(){try{localStorage.setItem(LS,JSON.stringify(items))}catch(e){}}
+$("f_cat").innerHTML=Object.keys(CATS).map(c=>`<option>${c}</option>`).join("");
+const S=(b)=>`<svg viewBox="0 0 100 100" aria-hidden="true">${b}</svg>`;
+const VEG={
+"टोमॅटो":S('<circle cx="50" cy="58" r="34" fill="#e53935"/><path d="M50 24l-12 9 12-3 12 3z" fill="#2e7d32"/><circle cx="38" cy="46" r="6" fill="#fff" opacity=".35"/>'),
+"कांदा":S('<path d="M50 14c4 14 38 22 38 50 0 18-16 26-38 26S12 82 12 64c0-28 34-36 38-50z" fill="#b565b8"/><path d="M50 24c-16 20-14 56 0 64M50 24c16 20 14 56 0 64" stroke="#fff" stroke-opacity=".5" fill="none" stroke-width="2"/><path d="M50 14v-6" stroke="#6b8e23" stroke-width="5" stroke-linecap="round"/>'),
+"वांगी":S('<path d="M28 40c-10 22 2 52 24 52 18 0 24-16 18-34-4-14-20-22-42-18z" fill="#5e35b1"/><path d="M28 40c6-12 22-14 36-4l-6 10z" fill="#2e7d32"/><ellipse cx="42" cy="62" rx="4" ry="9" fill="#fff" opacity=".25"/>'),
+"गाजर":S('<path d="M36 32h28L50 94z" fill="#fb8c00"/><path d="M42 48h10M45 62h8M47 76h5" stroke="#e65100" stroke-width="2"/><path d="M50 32c-8-18-16-16-16-16M50 32V8M50 32c8-18 16-16 16-16" stroke="#43a047" stroke-width="5" fill="none" stroke-linecap="round"/>'),
+"मिरची":S('<path d="M30 28c42 0 62 32 50 62-24-10-42-32-50-62z" fill="#d32f2f"/><path d="M30 28c-5-8-1-14 7-14" stroke="#2e7d32" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M42 36c18 8 30 22 36 40" stroke="#fff" stroke-opacity=".3" stroke-width="3" fill="none"/>'),
+"कोबी":S('<circle cx="50" cy="56" r="36" fill="#7cb342"/><path d="M50 20c-20 20-20 52 0 72M50 20c20 20 20 52 0 72M15 56c22-8 48-8 70 0" stroke="#dcedc8" stroke-width="3" fill="none"/>'),
+"बटाटा":S('<ellipse cx="50" cy="58" rx="38" ry="28" fill="#c68642" transform="rotate(-12 50 58)"/><circle cx="36" cy="52" r="2.5" fill="#8d5a2b"/><circle cx="58" cy="66" r="2.5" fill="#8d5a2b"/><circle cx="66" cy="48" r="2.5" fill="#8d5a2b"/>'),
+"भेंडी":S('<path d="M18 30c32-2 58 20 66 58-32-4-56-26-66-58z" fill="#558b2f"/><path d="M18 30c-6-6-4-12 4-14l6 8z" fill="#33691e"/><path d="M30 38c20 4 36 18 44 40" stroke="#aed581" stroke-width="3" fill="none"/>')};
+const KEYS={"टोमॅटो":["टोमॅटो","टोमाटो","tomato"],"कांदा":["कांदा","कांदे","onion"],"वांगी":["वांगी","वांगे","brinjal"],"गाजर":["गाजर","carrot"],"मिरची":["मिरची","मिरच्या","chili","chilli"],"कोबी":["कोबी","कोबीज","कोबीचा","cabbage"],"बटाटा":["बटाटा","बटाटे","potato"],"भेंडी":["भेंडी","okra"]};
+function pic(i){const t=((i.item||"")+"").toLowerCase();for(const k in KEYS)if(KEYS[k].some(w=>t.includes(w)))return VEG[k];return `<span class="em">${CATS[i.cat]||"🧺"}</span>`}
+const SEED=(c,rx,ry)=>S([[50,38],[38,44],[62,44],[28,52],[44,50],[58,50],[72,52],[34,58],[50,57],[66,58],[44,32],[57,33],[24,58],[76,58]].map(([x,y],n)=>`<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="${c}" stroke="#0003" stroke-width="1" transform="rotate(${n*37%60-30} ${x} ${y})"/>`).join("")+'<path d="M10 56h80c0 24-16 36-40 36S10 80 10 56z" fill="#8d5a2b"/><path d="M10 56h80" stroke="#6d4320" stroke-width="4"/>');
+Object.assign(VEG,{
+"ज्वारी":SEED("#e9c46a",7,7),"बाजरी":SEED("#b8a35c",5,5),"गहू":SEED("#d9a441",5,8),"तांदूळ":SEED("#f4efe1",4,9),"नाचणी":SEED("#8b4a2b",5,5),
+"मका":S('<path d="M50 90C30 80 22 50 36 28c-2 26 4 46 14 62zM50 90c20-10 28-40 14-62 2 26-4 46-14 62z" fill="#7cb342"/><path d="M50 8c16 10 18 52 0 78-18-26-16-68 0-78z" fill="#fbc02d"/><path d="M42 24h16M40 38h20M40 52h20M42 66h16M50 12v70" stroke="#f57f17" stroke-width="2"/>'),
+"सोयाबीन":SEED("#e6cf8f",7,7),"तीळ":SEED("#f5ead0",3,5),"मोहरी":SEED("#7a4b2a",4,4),"जवस":SEED("#6b3a1e",4,6),
+"भुईमूग":S('<g transform="rotate(-35 50 50)"><ellipse cx="30" cy="50" rx="22" ry="18" fill="#d9a566"/><ellipse cx="70" cy="50" rx="22" ry="18" fill="#d9a566"/></g><g fill="#a9743c"><circle cx="32" cy="64" r="2"/><circle cx="46" cy="52" r="2"/><circle cx="58" cy="48" r="2"/><circle cx="68" cy="36" r="2"/><circle cx="40" cy="70" r="2"/></g>'),
+"सूर्यफूल":S('<g fill="#fbc02d">'+[0,1,2,3,4,5,6,7,8,9].map(n=>`<ellipse cx="50" cy="20" rx="8" ry="16" transform="rotate(${n*36} 50 50)"/>`).join("")+'</g><circle cx="50" cy="50" r="16" fill="#5d3a1a"/><circle cx="50" cy="50" r="9" fill="#3e2723"/>'),
+"तूर":SEED("#e0a53a",6,6),"हरभरा":SEED("#d9b36c",6,6),"मूग":SEED("#6b9a3a",5,5),"उडीद":SEED("#2f2f2f",5,5),"मटकी":SEED("#a67c52",4,6),"मसूर":SEED("#d2691e",5,5),"वाटाणा":SEED("#8bc34a",7,7),"राजमा":SEED("#9b2c2c",5,8)});
+Object.assign(KEYS,{"ज्वारी":["ज्वारी","jowar","sorghum"],"बाजरी":["बाजरी","bajra"],"गहू":["गहू","wheat"],"तांदूळ":["तांदूळ","भात","तांदुळ","rice"],"नाचणी":["नाचणी","ragi"],"मका":["मका","maize","corn"],"सोयाबीन":["सोयाबीन","soybean"],"तीळ":["तीळ","sesame"],"मोहरी":["मोहरी","mustard"],"जवस":["जवस","flax"],"भुईमूग":["भुईमूग","शेंगदाणा","शेंगा","groundnut","peanut"],"सूर्यफूल":["सूर्यफूल","sunflower"],"तूर":["तूर","तुर","pigeon"],"हरभरा":["हरभरा","चणा","gram"],"मूग":["मूग","moong"],"उडीद":["उडीद","urad"],"मटकी":["मटकी","मठ"],"मसूर":["मसूर","lentil"],"वाटाणा":["वाटाणा","मटार","peas"],"राजमा":["राजमा","rajma"]});
+const EGG=(c,sp)=>S(`<ellipse cx="32" cy="58" rx="15" ry="20" fill="${c}"/><ellipse cx="68" cy="58" rx="15" ry="20" fill="${c}"/><ellipse cx="50" cy="42" rx="15" ry="20" fill="${c}"/><g fill="#fff" opacity=".45"><ellipse cx="26" cy="50" rx="3" ry="6"/><ellipse cx="62" cy="50" rx="3" ry="6"/><ellipse cx="44" cy="34" rx="3" ry="6"/></g>${sp?'<g fill="#8d5a2b" opacity=".6"><circle cx="34" cy="64" r="1.6"/><circle cx="70" cy="64" r="1.6"/><circle cx="54" cy="48" r="1.6"/><circle cx="62" cy="68" r="1.6"/><circle cx="44" cy="52" r="1.6"/></g>':""}<path d="M8 68h84c0 14-16 24-42 24S8 82 8 68z" fill="#c9a36a"/><path d="M8 68h84" stroke="#a37f45" stroke-width="3"/>`);
+const JAR=(c,l)=>S(`<rect x="24" y="30" width="52" height="60" rx="10" fill="${c}"/><rect x="20" y="16" width="60" height="18" rx="5" fill="${l}"/><ellipse cx="38" cy="58" rx="5" ry="14" fill="#fff" opacity=".35"/>`);
+const HEN=(c,k)=>S(`<path d="M20 58c-12-4-14-18-6-26 2 12 8 18 14 20z" fill="${c}"/><ellipse cx="48" cy="64" rx="32" ry="24" fill="${c}"/><ellipse cx="46" cy="66" rx="16" ry="10" fill="#0002"/><circle cx="70" cy="36" r="14" fill="${c}"/><path d="M62 24l4-10 4 8 4-8 4 10z" fill="#e53935"/><path d="M82 36l12 4-12 4z" fill="#fb8c00"/><circle cx="74" cy="34" r="2.6" fill="#222"/><path d="M42 86v9M56 86v9" stroke="#fb8c00" stroke-width="4" stroke-linecap="round"/>`);
+const GR=cs=>cs.map(([x,y,c])=>`<circle cx="${x}" cy="${y}" r="11" fill="${c}"/>`).join("");
+Object.assign(VEG,{
+"दूध":S('<path d="M40 16h20v14c10 6 16 14 16 26v34H24V56c0-12 6-20 16-26z" fill="#fff" stroke="#90a4ae" stroke-width="3"/><rect x="38" y="8" width="24" height="10" rx="3" fill="#1e88e5"/><rect x="28" y="58" width="44" height="16" fill="#bbdefb"/>'),
+"तूप":JAR("#fdd835","#8d6e63"),"मध":JAR("#ffb300","#6d4c41"),"लोणी":JAR("#fff59d","#90a4ae"),
+"दही":S('<path d="M12 46h76c0 28-16 42-38 42S12 74 12 46z" fill="#eceff1" stroke="#b0bec5" stroke-width="3"/><ellipse cx="50" cy="46" rx="38" ry="10" fill="#fff" stroke="#b0bec5" stroke-width="3"/>'),
+"ब्रॉयलर अंडी":EGG("#fff8e1",0),"गावरान अंडी":EGG("#c98b52",1),
+"ब्रॉयलर कोंबडी":HEN("#f5f5f5"),"गावरान कोंबडी":HEN("#b5651d"),
+"डाळिंब":S('<circle cx="50" cy="58" r="34" fill="#c62828"/><path d="M38 28l5-12 7 8 7-8 5 12z" fill="#8e1b1b"/><ellipse cx="38" cy="46" rx="6" ry="10" fill="#fff" opacity=".3"/>'),
+"केळी":S('<path d="M18 28c2 44 38 62 68 44-24 8-46-8-50-46z" fill="#fdd835" stroke="#f9a825" stroke-width="2"/><path d="M34 22c6-10 10-10 12-6l-4 12z" fill="#6d4c41"/><path d="M34 30c4 34 28 50 52 42" stroke="#f9a825" stroke-width="3" fill="none"/>'),
+"आंबा":S('<path d="M50 20c30-4 44 24 32 48C70 90 36 92 22 70 12 50 26 22 50 20z" fill="#ffa726"/><path d="M62 28c14 6 20 24 12 40" stroke="#ef5350" stroke-width="7" fill="none" opacity=".5"/><path d="M50 20c6-10 14-10 20-6" stroke="#2e7d32" stroke-width="5" fill="none" stroke-linecap="round"/>'),
+"द्राक्ष":S(GR([[34,40,"#7b1fa2"],[56,40,"#7b1fa2"],[45,56,"#8e24aa"],[26,58,"#8e24aa"],[64,58,"#8e24aa"],[36,72,"#9c27b0"],[54,72,"#9c27b0"],[45,86,"#7b1fa2"]])+'<path d="M46 28V12" stroke="#6d4c41" stroke-width="5"/><path d="M46 16c14-8 26 0 26 0-4 12-18 12-26 0z" fill="#43a047"/>'),
+"लिंबू":S('<ellipse cx="50" cy="56" rx="36" ry="26" fill="#fdd835"/><path d="M12 54l-6-4M88 54l6-4" stroke="#f9a825" stroke-width="5" stroke-linecap="round"/><ellipse cx="38" cy="46" rx="9" ry="4" fill="#fff" opacity=".4"/>'),
+"ऊस":S('<g stroke-linecap="round" fill="none"><path d="M26 92L34 18M50 94V12M74 92L66 18" stroke="#6a1b9a" stroke-width="10"/><path d="M28 70h10M30 46h8M44 66h12M44 38h12M70 70h-10M68 46h-8" stroke="#ce93d8" stroke-width="3"/><path d="M50 12c-14-4-24 2-28 10M50 12c14-4 24 2 28 10" stroke="#43a047" stroke-width="5"/></g>'),
+"गूळ":S('<path d="M14 48l36-18 36 18v28L50 92 14 76z" fill="#b97a3d"/><path d="M14 48l36 20 36-20M50 68v24" stroke="#7a4a1f" stroke-width="2.5" fill="none"/><path d="M26 44l24-12 10 5-24 12z" fill="#d79a5a"/>'),
+"हळद":S('<g fill="#f9a825" stroke="#e65100" stroke-width="1.5"><ellipse cx="40" cy="42" rx="12" ry="30" transform="rotate(-25 40 42)"/><ellipse cx="62" cy="52" rx="11" ry="28" transform="rotate(20 62 52)"/><ellipse cx="50" cy="74" rx="26" ry="10"/></g>'),
+"कापूस":S('<path d="M20 66l30 26 30-26-10-18H30z" fill="#6d4c41"/><g fill="#fff" stroke="#cfd8dc" stroke-width="2"><circle cx="34" cy="44" r="13"/><circle cx="62" cy="44" r="13"/><circle cx="48" cy="30" r="14"/><circle cx="48" cy="50" r="12"/></g>'),
+"चारा":S('<path d="M28 18L38 90M44 10L48 90M58 10L54 90M74 18L62 90" stroke="#d4a017" stroke-width="7" stroke-linecap="round"/><rect x="28" y="54" width="46" height="10" rx="4" fill="#8d6e63"/>')});
+Object.assign(KEYS,{"दूध":["दूध","milk"],"तूप":["तूप","ghee"],"मध":["मध","honey"],"लोणी":["लोणी","butter"],"दही":["दही","curd","ताक"],
+"ब्रॉयलर अंडी":["ब्रॉयलर अंडी","ब्रॉयलर अंडे","broiler egg"],"गावरान अंडी":["गावरान अंडी","देशी अंडी","अंडी","अंडे","egg"],
+"ब्रॉयलर कोंबडी":["ब्रॉयलर कोंबडी","ब्रॉयलर चिकन","broiler"],"गावरान कोंबडी":["गावरान कोंबडी","देशी कोंबडी","कोंबडी","कोंबड","chicken"],
+"डाळिंब":["डाळिंब","pomegranate"],"केळी":["केळी","केळ","banana"],"आंबा":["आंबा","आंबे","mango"],"द्राक्ष":["द्राक्ष","grape"],"लिंबू":["लिंबू","लिंबे","lemon"],
+"ऊस":["ऊस","sugarcane"],"गूळ":["गूळ","jaggery"],"हळद":["हळद","turmeric"],"कापूस":["कापूस","cotton"],"चारा":["चारा","कडबा","वैरण","fodder"]});
+const GROUPS={"🥬 भाजीपाला":["टोमॅटो","कांदा","वांगी","गाजर","मिरची","कोबी","बटाटा","भेंडी"],"🌾 धान्य":["ज्वारी","बाजरी","गहू","तांदूळ","मका","नाचणी"],"🌻 तेलबिया":["सोयाबीन","भुईमूग","सूर्यफूल","तीळ","मोहरी","जवस"],"🫘 डाळी":["तूर","हरभरा","मूग","उडीद","मटकी","मसूर","वाटाणा","राजमा"],"🍇 फळे":["डाळिंब","केळी","आंबा","द्राक्ष","लिंबू"],"🥛 दुग्धजन्य":["दूध","तूप","दही","लोणी","मध"],"🥚 अंडी/पोल्ट्री":["गावरान अंडी","ब्रॉयलर अंडी","गावरान कोंबडी","ब्रॉयलर कोंबडी"],"🌿 शेतीपूरक":["ऊस","गूळ","हळद","कापूस","चारा"]};
+let grp=Object.keys(GROUPS)[0];
+function gshow(){
+ $("gtabs").innerHTML=Object.keys(GROUPS).map(g=>`<button class="gt ${g===grp?"on":""}" data-g="${g}">${g}</button>`).join("");
+ $("vrow").innerHTML=GROUPS[grp].map((k,n)=>`<button class="vb" style="--d:${(n*0.25).toFixed(2)}s" data-k="${k}">${VEG[k]}<span>${k}</span></button>`).join("");
+ document.querySelectorAll(".gt").forEach(b=>b.onclick=()=>{grp=b.dataset.g;gshow()});
+ document.querySelectorAll(".vb").forEach(b=>b.onclick=()=>{$("q").value=b.dataset.k;cat="";chips();render();$("maal").scrollIntoView()});
+}
+gshow();
+(function(){const ks=Object.keys(VEG);$("bgart").innerHTML=Array.from({length:18},(_,n)=>{const k=ks[(n*5)%ks.length],sz=56+(n*23)%62;
+ return `<i style="left:${(n*37)%92}%;top:${(n*53)%86}%;width:${sz}px;height:${sz}px;--t:${7+(n*3)%6}s;--d:-${(n*7)%9}s">${VEG[k]}</i>`}).join("")})();
+function chips(){$("chips").innerHTML=[["","🛍 सर्व"],...Object.entries(CATS).map(([k,v])=>[k,v+" "+k])].map(([k,l])=>`<button class="chip ${cat===k?"on":""}" data-c="${k}">${l}</button>`).join("");
+ document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{cat=b.dataset.c;chips();render()})}
+function render(){
+ const q=$("q").value.trim().toLowerCase();
+ let f=items.filter(i=>(!cat||i.cat===cat)&&(!q||(i.item+i.name+(i.d||"")).toLowerCase().includes(q)));
+ f.sort($("sort").value==="a"?(a,b)=>a.item.localeCompare(b.item,"mr"):(a,b)=>b.ts-a.ts);
+ $("s1").textContent=items.filter(i=>!i.sold).length;$("s2").textContent=new Set(items.map(i=>i.ph)).size;$("s3").textContent=new Set(items.map(i=>i.cat)).size;
+ $("list").innerHTML=f.length?f.map(i=>{const mine=i.uid===uid||canEdit,fresh=Date.now()-i.ts<864e5*3;
+ const msg=encodeURIComponent(`नमस्कार ${i.name}, मिरी शेतकरी बाजारवर तुमचा "${i.item}" पाहिला. उपलब्ध आहे का?`);
+ return `<div class="card ${i.sold?"gone":""}"><div class="top">${pic(i)}${fresh&&!i.sold?'<span class="new">नवीन</span>':""}${i.sold?'<span class="sold">विकले गेले</span>':""}${i.approved===false?'<span class="sold" style="background:#ef6c00">⏳ मंजुरी प्रलंबित</span>':""}</div>
+ <div class="body"><h3>${esc(i.item)}</h3><div class="price">${esc(i.pr)||"भाव फोनवर"}</div>
+ <div class="mu">📦 ${esc(i.qty)||"—"}</div><div class="mu">👨‍🌾 ${esc(i.name)}</div>${i.d?`<div class="mu">📍 ${esc(i.d)}</div>`:""}
+ <div class="act"><a href="tel:${esc(i.ph)}">📞 कॉल</a><a class="wa" href="https://wa.me/91${esc(i.ph)}?text=${msg}" target="_blank" rel="noopener">💬 WhatsApp</a></div>
+ ${mine?`<div class="act">${(canEdit&&i.approved===false)?`<button onclick="approve('${i.id}')">✔ मंजूर करा</button>`:""}<button class="alt" onclick="sold('${i.id}',${!i.sold})">${i.sold?"↩ पुन्हा उपलब्ध":"✅ विकले गेले"}</button><button class="alt" onclick="del('${i.id}')">🗑 काढा</button></div>`:""}</div></div>`}).join(""):`<div class="empty">🌱 या प्रकारात अजून माल नाही. तुम्ही पहिला माल ठेवा!</div>`}
+const FBX=()=>{if(!window.FBAPI){alert("सर्व्हरशी जोडणी झाली नाही. पान रिफ्रेश करा / इंटरनेट तपासा.");return false}return true};
+async function sold(id,v){if(!FBX())return;try{await FBAPI.update(id,{sold:v})}catch(e){alert("बदल करता आला नाही.")}}
+async function approve(id){if(!FBX())return;try{await FBAPI.update(id,{approved:true})}catch(e){alert("मंजूर करता आले नाही.")}}
+async function del(id){if(!FBX()||!confirm("हा माल काढून टाकायचा?"))return;try{await FBAPI.remove(id)}catch(e){alert("काढता आला नाही.")}}
+window.setItems=a=>{items=a;render()};
+let authPhone="";
+window.setAuth=(u,a,ph)=>{uid=u||"local";canEdit=!!a;authPhone=ph||"";authUI();render()};
+function authUI(){const on=uid!=="local";$("authbar").innerHTML=on?`<span>👤 ${esc(authPhone)}${canEdit?" • ॲडमिन":""}</span><button class="gt" id="lo">बाहेर पडा</button>`:`<button class="gt" id="li">👤 लॉगिन (OTP)</button>`;
+ if(on)$("lo").onclick=()=>FBAPI.logout();else $("li").onclick=openLogin}
+function openLogin(){if(!FBX())return;$("ldlg").showModal()}
+const ER={"auth/invalid-verification-code":"OTP चुकीचा आहे.","auth/too-many-requests":"खूप प्रयत्न झाले, थोड्या वेळाने पुन्हा करा.","auth/invalid-phone-number":"मोबाईल नंबर चुकीचा आहे.","auth/code-expired":"OTP ची वेळ संपली, पुन्हा पाठवा."};
+let stage=0;
+function lreset(){stage=0;$("l_otp").style.display="none";$("l_go").textContent="OTP पाठवा";$("l_code").value="";$("l_msg").textContent=""}
+$("l_cancel").onclick=()=>{$("ldlg").close();lreset()};
+$("l_go").onclick=async()=>{const b=$("l_go"),m=$("l_msg");b.disabled=true;
+ try{if(stage===0){const ph=$("l_ph").value.replace(/\D/g,"");if(ph.length!==10){m.textContent="१० अंकी नंबर टाका.";return}
+   m.textContent="OTP पाठवत आहे…";await FBAPI.sendOtp(ph);stage=1;$("l_otp").style.display="block";b.textContent="OTP तपासा";m.textContent="SMS द्वारे OTP पाठवला आहे."}
+  else{await FBAPI.verify($("l_code").value.trim());$("ldlg").close();lreset()}
+ }catch(e){m.textContent="⚠️ "+(ER[e.code]||e.code||e.message)}finally{b.disabled=false}};
+function openAdd(){if(!FBX())return;if(uid==="local"){window._pendingAdd=true;openLogin();return}
+ $("f_ph").value=authPhone.replace(/\D/g,"").slice(-10);$("dlg").showModal()}
+window.openAdd=openAdd;$("add").onclick=openAdd;$("add2").onclick=openAdd;$("cancel").onclick=()=>$("dlg").close();
+$("save").onclick=async()=>{if(!FBX())return;
+ const r={name:$("f_name").value.trim(),ph:$("f_ph").value.replace(/\D/g,""),item:$("f_item").value.trim(),cat:$("f_cat").value,qty:$("f_qty").value.trim(),pr:$("f_pr").value.trim(),d:$("f_d").value.trim(),sold:false,approved:false,uid,ts:Date.now()};
+ if(!r.name||!r.item||r.ph.length!==10){alert("कृपया नाव, मालाचे नाव व १० अंकी मोबाईल नंबर भरा.");return}
+ try{await FBAPI.add("l"+r.ts,r)}catch(e){alert("जतन करता आले नाही: "+(e.code||e.message));return}
+ ["f_name","f_ph","f_item","f_qty","f_pr","f_d"].forEach(k=>$(k).value="");$("dlg").close();
+ alert("✅ माल नोंदवला. ॲडमिन मंजुरीनंतर तो सर्वांना दिसेल.");$("maal").scrollIntoView()};
+$("q").oninput=render;$("sort").onchange=render;
+chips();render();authUI();
+</script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getAuth,onAuthStateChanged,RecaptchaVerifier,signInWithPhoneNumber,signOut} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {getFirestore,collection,query,where,onSnapshot,doc,setDoc,updateDoc,deleteDoc,getDoc} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+const app=initializeApp({apiKey:"AIzaSyClvcacOo-rQe63BXFpC9qJWs_tWkVgk1Q",authDomain:"miri-bazar.firebaseapp.com",projectId:"miri-bazar",storageBucket:"miri-bazar.firebasestorage.app",messagingSenderId:"111443155280",appId:"1:111443155280:web:b7991ac6ba37c0dd33b455"});
+const auth=getAuth(app);auth.languageCode="mr";const db=getFirestore(app),L=collection(db,"listings");
+const maps={pub:new Map(),mine:new Map(),pend:new Map()};let unsubs=[],user=null,verifier=null,conf=null;
+function push(){const m=new Map();for(const k in maps)maps[k].forEach((v,id)=>m.set(id,v));window.setItems([...m.values()])}
+function sub(key,q){return onSnapshot(q,s=>{maps[key]=new Map(s.docs.map(d=>[d.id,{...d.data(),id:d.id}]));push()},e=>console.warn(key,e.code))}
+sub("pub",query(L,where("approved","==",true)));
+onAuthStateChanged(auth,async u=>{user=u;let adm=false;unsubs.forEach(f=>f());unsubs=[];maps.mine=new Map();maps.pend=new Map();
+ if(u){try{adm=(await getDoc(doc(db,"admins",u.uid))).exists()}catch(e){}
+  unsubs.push(sub("mine",query(L,where("uid","==",u.uid))));
+  if(adm)unsubs.push(sub("pend",query(L,where("approved","==",false))))}
+ window.setAuth(u?u.uid:null,adm,u?u.phoneNumber:"");push();
+ if(u&&window._pendingAdd){window._pendingAdd=false;window.openAdd()}});
+window.FBAPI={user:()=>user,
+ add:(id,r)=>setDoc(doc(db,"listings",id),r),update:(id,p)=>updateDoc(doc(db,"listings",id),p),remove:id=>deleteDoc(doc(db,"listings",id)),
+ async sendOtp(ph){try{if(verifier){try{verifier.clear()}catch(x){}verifier=null}const rc=document.getElementById("rc");rc.innerHTML="";const w=document.createElement("div");rc.appendChild(w);verifier=new RecaptchaVerifier(auth,w,{size:"invisible"});conf=await signInWithPhoneNumber(auth,"+91"+ph,verifier)}catch(e){try{verifier.clear()}catch(x){}verifier=null;throw e}},
+ verify:code=>conf.confirm(code),logout:()=>signOut(auth)};
+</script></body></html>
